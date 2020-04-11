@@ -28,9 +28,4 @@ public class SPH2dRender : MonoBehaviour
         mat.SetBuffer("particle", fluid2d.particlesBufferRead);
         Graphics.DrawProcedural(MeshTopology.Points, fluid2d.particleNum);
     }
-
-    private void OnDestroy()
-    {
-        fluid2d.OnDestroy();
-    }
 }

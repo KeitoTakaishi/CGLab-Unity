@@ -27,9 +27,6 @@ using UnityEngine;
     };
 
 
-
-
-
 public class Fluid2DBase : MonoBehaviour { 
 
      public int particleNum;
@@ -66,17 +63,16 @@ public class Fluid2DBase : MonoBehaviour {
     public void Start()
     {
         initBuffer();
-        
-    }
-
-    public void Update()
-    {
-        timeStep = Mathf.Min(maxAllowableTimestep, Time.deltaTime);
 
         // 2Dカーネル係数
         densityCoef = particleMass * 4f / (Mathf.PI * Mathf.Pow(smoothlen, 8));
         gradPressureCoef = particleMass * -30.0f / (Mathf.PI * Mathf.Pow(smoothlen, 5));
         lapViscosityCoef = particleMass * 20f / (3 * Mathf.PI * Mathf.Pow(smoothlen, 5));
+    }
+
+    public void Update()
+    {
+        timeStep = Mathf.Min(maxAllowableTimestep, Time.deltaTime);
 
         cs.SetInt("_NumParticles", numParticles);
         cs.SetFloat("_TimeStep", timeStep);
@@ -90,6 +86,7 @@ public class Fluid2DBase : MonoBehaviour {
         cs.SetFloat("_WallStiffness", wallStiffness);
         cs.SetVector("_Range", range);
         cs.SetVector("_Gravity", gravity);
+
 
         for(int i = 0; i < iterations; i++)
         {

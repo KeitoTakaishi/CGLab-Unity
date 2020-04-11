@@ -1,12 +1,72 @@
 Base path: C:/Program Files/Unity/Hub/Editor/2018.4.13f1/Editor/Data
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  error: 2 plat 4 at SPH2D.compute(42): syntax error: unexpected token 'float'
-  api=4 insize=1312 outsize=0 ok=0
+  api=4 insize=1372 outsize=189 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(53): implicit truncation of vector type
+  error: 2 plat 4 at SPH3D.compute(55): invalid subscript 'Position'
+  api=4 insize=1478 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(53): implicit truncation of vector type
+  error: 1 plat 4 at SPH3D.compute(55): implicit truncation of vector type
+  api=4 insize=1479 outsize=193 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(101): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(145): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6831 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(59): implicit truncation of vector type
+  error: 1 plat 4 at SPH3D.compute(64): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(71): undeclared identifier 'h_sq'
+  api=4 insize=1953 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(64): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=1958 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(98): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(141): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6399 outsize=1925 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(69): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(104): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=2797 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(93): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(136): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6132 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(75): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(110): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3299 outsize=1161 ok=1
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  error: 2 plat 4 at (0): Did not find shader kernel 'IntegrateCS' to compile
-  api=4 insize=1333 outsize=0 ok=0
+  error: 1 plat 4 at SPH2D.compute(93): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(136): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6132 outsize=1925 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(130): undeclared identifier 'P_velocity'
+  api=4 insize=3759 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(59): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3754 outsize=781 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3861 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4059 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(145): undeclared identifier 'position'
+  api=4 insize=5029 outsize=0 ok=0
+Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
@@ -25,46 +85,22 @@ Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  error: 1 plat 4 at SPH2D.compute(94): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at SPH2D.compute(96): implicit truncation of vector type
-  error: 1 plat 4 at SPH2D.compute(133): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=6213 outsize=1161 ok=1
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  error: 1 plat 4 at SPH2D.compute(64): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
-  error: 1 plat 4 at SPH2D.compute(94): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at SPH2D.compute(96): implicit truncation of vector type
-  error: 1 plat 4 at SPH2D.compute(133): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=6193 outsize=781 ok=1
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: initializeCompiler
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4963 outsize=905 ok=1
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  error: 1 plat 4 at SPH2D.compute(64): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
-  error: 1 plat 4 at SPH2D.compute(94): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at SPH2D.compute(96): implicit truncation of vector type
-  error: 1 plat 4 at SPH2D.compute(133): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=6191 outsize=781 ok=1
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4957 outsize=1161 ok=1
 Cmd: initializeCompiler
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  error: 1 plat 4 at SPH2D.compute(100): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at SPH2D.compute(102): implicit truncation of vector type
-  error: 1 plat 4 at SPH2D.compute(139): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=6674 outsize=1161 ok=1
 Cmd: initializeCompiler
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  error: 1 plat 4 at SPH2D.compute(100): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at SPH2D.compute(144): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=6927 outsize=1333 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
@@ -72,10 +108,62 @@ Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  error: 1 plat 4 at SPH2D.compute(66): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
-  error: 1 plat 4 at SPH2D.compute(100): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at SPH2D.compute(144): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=7052 outsize=781 ok=1
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4957 outsize=1721 ok=1
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4959 outsize=1721 ok=1
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(59): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4994 outsize=781 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler

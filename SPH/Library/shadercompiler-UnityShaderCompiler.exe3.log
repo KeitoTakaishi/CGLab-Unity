@@ -1,9 +1,175 @@
 Base path: C:/Program Files/Unity/Hub/Editor/2018.4.13f1/Editor/Data
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
+  error: 2 plat 4 at (0): Did not find shader kernel 'IntegrateKer' to compile
+  api=4 insize=360 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SPH3D.compute(52): unrecognized identifier 'DensityKer'
+  api=4 insize=1352 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=1372 outsize=193 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(53): implicit truncation of vector type
+  error: 1 plat 4 at SPH3D.compute(55): implicit truncation of vector type
+  api=4 insize=1479 outsize=189 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(66): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
   error: 1 plat 4 at SPH2D.compute(101): signed/unsigned mismatch, unsigned assumed
   error: 1 plat 4 at SPH2D.compute(145): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=7118 outsize=1333 ok=1
+  api=4 insize=6831 outsize=781 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(59): implicit truncation of vector type
+  error: 1 plat 4 at SPH3D.compute(64): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=1956 outsize=189 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(98): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(141): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6399 outsize=1161 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(69): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(104): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(106): undeclared identifier '_ParticleBufferRead'
+  api=4 insize=2796 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(69): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(104): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=2797 outsize=193 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(69): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(104): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=2887 outsize=189 ok=1
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(59): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 4 at SPH3D.compute(76): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(111): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3458 outsize=781 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3754 outsize=193 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=3861 outsize=2105 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(163): undeclared identifier 'acceleration'
+  api=4 insize=4999 outsize=0 ok=0
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4957 outsize=2105 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4959 outsize=189 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler

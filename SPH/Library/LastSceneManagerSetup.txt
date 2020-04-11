@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/SPH2D.unity
+- path: Assets/Scenes/SPH3D.unity
   isLoaded: 1
   isActive: 1

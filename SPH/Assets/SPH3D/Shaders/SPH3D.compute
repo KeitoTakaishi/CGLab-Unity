@@ -1,0 +1,173 @@
+﻿#pragma kernel DensityKer
+#pragma kernel PressureKer
+#pragma kernel ForceKer
+#pragma kernel IntegrateKer
+
+#define THREAD [numthreads(1024, 1, 1)]
+
+struct Particle {
+	float3 position;
+	float3 velocity;
+};
+
+struct ParticlePressure {
+	float pressure;
+};
+
+struct ParticleForces {
+	float3 acceleration;
+};
+
+struct ParticleDensity {
+	float density;
+};
+
+StructuredBuffer  <Particle>        _ParticlesBufferRead;
+RWStructuredBuffer<Particle>        _ParticlesBufferWrite;
+
+StructuredBuffer  <ParticleDensity> _ParticlesDensityBufferRead;
+RWStructuredBuffer<ParticleDensity> _ParticlesDensityBufferWrite;
+
+StructuredBuffer<ParticlePressure> _ParticlesPressureBufferRead;
+RWStructuredBuffer<ParticlePressure> _ParticlesPressureBufferWrite;
+
+StructuredBuffer  <ParticleForces>  _ParticlesForceBufferRead;
+RWStructuredBuffer<ParticleForces>  _ParticlesForceBufferWrite;
+
+int   _NumParticles;
+float _TimeStep;
+float _Smoothlen;
+float _PressureStiffness;
+float _RestDensity;
+float _DensityCoef;
+float _GradPressureCoef;
+float _LapViscosityCoef;
+float _WallStiffness;
+float _Viscosity;
+float3 _Gravity;
+float3 _Range;
+
+
+
+inline float CalcDensity(float r_sq) {
+	const float h_sq = _Smoothlen * _Smoothlen;
+	return _DensityCoef * (h_sq - r_sq) * (h_sq - r_sq) * (h_sq - r_sq);
+}
+
+inline float CalcPress(float density) {
+	float gamma = 7.0;
+	return _PressureStiffness * max(pow(density / _RestDensity, gamma) - 1.0, 0.0);
+}
+
+inline float3 CalcGradPress(float r, float P_pressure, float N_pressure, float N_density, float3 diff) {
+	const float h = _Smoothlen;
+	float avg_pressure = 0.5f * (N_pressure - P_pressure);
+	return _GradPressureCoef * avg_pressure / N_density * (h - r) * (h - r) / r * (diff);
+}
+
+inline float3 CalcLapVelocity(float r, float3 P_velocity, float3 N_velocity, float N_density) {
+	const float h = _Smoothlen;
+	float3 vel_diff = (N_velocity - P_velocity);
+	return _LapViscosityCoef * vel_diff / N_density * (h - r);
+}
+
+
+THREAD
+void DensityKer(uint3 DTid : SV_DispatchThreadID) {
+	uint P_ID = DTid.x;
+	float h_sq = _Smoothlen * _Smoothlen;
+	float3 P_pos = _ParticlesBufferRead[P_ID].position;
+	float density = 0;
+
+	for (uint N_ID = 0; N_ID < _NumParticles; N_ID++) {
+		if (N_ID == P_ID) continue;
+
+		float3 N_pos = _ParticlesBufferRead[N_ID].position;
+		float3 diff = N_pos - P_pos;
+		float r_sq = dot(diff, diff);
+
+		if (r_sq < h_sq) {
+			density += CalcDensity(r_sq);
+		}
+	}
+	_ParticlesDensityBufferWrite[P_ID].density = density;
+}
+
+THREAD
+void PressureKer(uint3 DTid : SV_DispatchThreadID) {
+	uint P_ID = DTid.x;
+	float  P_density = _ParticlesDensityBufferRead[P_ID].density;
+	float  P_pressure = CalcPress(P_density);
+	_ParticlesPressureBufferWrite[P_ID].pressure = P_pressure;
+}
+
+THREAD
+void ForceKer(uint3 DTid : SV_DispatchThreadID) {
+	uint P_ID = DTid.x;
+	float3 P_pos = _ParticlesBufferRead[P_ID].position;
+	float3 P_vel = _ParticlesBufferRead[P_ID].velocity;
+	float  P_density = _ParticlesDensityBufferRead[P_ID].density;		
+	float  P_pressure = _ParticlesPressureBufferRead[P_ID].pressure;
+	float h_sq = _Smoothlen * _Smoothlen;
+
+	float3 press = float3(0, 0, 0);
+	float3 visco = float3(0, 0, 0);
+
+	for (int N_ID = 0; N_ID < _NumParticles; N_ID++) {
+		if (N_ID == P_ID) continue;
+
+		float3 N_pos = _ParticlesBufferRead[N_ID].position;
+		float3 diff = N_pos - P_pos;
+		float r_sq = dot(diff, diff);
+
+		if (r_sq < h_sq) {
+			float  N_density = _ParticlesDensityBufferRead[N_ID].density;
+			float  N_pressure = _ParticlesPressureBufferRead[N_ID].pressure;
+			float3 N_velocity = _ParticlesBufferRead[N_ID].velocity;
+			float  r = sqrt(r_sq);
+
+			press += CalcGradPress(r, P_pressure, N_pressure, N_density, diff);
+			visco += CalcLapVelocity(r, P_vel, N_velocity, N_density);
+		}
+	}
+	float3 force = press / P_density + _Viscosity * visco;
+	_ParticlesForceBufferWrite[P_ID].acceleration = force;
+}
+
+THREAD
+void IntegrateKer(uint3 DTid : SV_DispatchThreadID) {
+	const unsigned int P_ID = DTid.x;
+
+	float3 pos = _ParticlesBufferRead[P_ID].position;
+	float3 vel = _ParticlesBufferRead[P_ID].velocity;
+	float3 acc = _ParticlesForceBufferRead[P_ID].acceleration;
+
+
+	float dist = dot(float4(pos, 1.0), float4(1.0, 0.0, 0.0, 0.0));
+	acc += min(dist, 0) * -_WallStiffness * float3(1, 0, 0);
+
+	dist = dot(float4(pos, 1.0), float4(0.0, 1.0, 0.0, 0.0));
+	acc += min(dist, 0) * -_WallStiffness * float3(0, 1, 0);
+
+	dist = dot(float4(pos, 1.0), float4(0.0, 0.0, 1.0, 0.0));
+	acc += min(dist, 0) * -_WallStiffness * float3(0, 0, 1);
+
+	dist = dot(float4(pos, 1.0), float4(-1.0, 0.0, 0.0, _Range.x));
+	acc += min(dist, 0) * -_WallStiffness * float3(-1, 0, 0);
+
+	dist = dot(float4(pos, 1.0), float4(0.0, -1.0, 0.0, _Range.y));
+	acc += min(dist, 0) * -_WallStiffness * float3(0, -1, 0);
+
+	dist = dot(float4(pos, 1.0), float4(0.0, 0.0, -1.0, _Range.z));
+	acc += min(dist, 0) * -_WallStiffness * float3(0, 0, -1);
+
+	acc += _Gravity;
+
+	vel += _TimeStep * acc;
+	pos += _TimeStep * vel;
+
+	_ParticlesBufferWrite[P_ID].position = pos;
+	_ParticlesBufferWrite[P_ID].velocity = vel;
+
+
+}

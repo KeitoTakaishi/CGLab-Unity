@@ -1,8 +1,110 @@
 Base path: C:/Program Files/Unity/Hub/Editor/2018.4.13f1/Editor/Data
 Cmd: initializeCompiler
 Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: preprocessCompute
-  insize=7113 outsize=7118 ok=1
+  insize=421 outsize=420 ok=1
+Cmd: preprocess
+  insize=1177 outsize=306 ok=1
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=217 outsize=216 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=355 outsize=360 ok=1
+Cmd: preprocessCompute
+  insize=1347 outsize=1352 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SPH3D.compute(52): unrecognized identifier 'DensityKer'
+  api=4 insize=1352 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1367 outsize=1372 ok=1
+Cmd: preprocessCompute
+  insize=1473 outsize=1478 ok=1
+Cmd: preprocessCompute
+  insize=1474 outsize=1479 ok=1
+Cmd: preprocessCompute
+  insize=6826 outsize=6831 ok=1
+Cmd: preprocessCompute
+  insize=1948 outsize=1953 ok=1
+Cmd: preprocessCompute
+  insize=1951 outsize=1956 ok=1
+Cmd: preprocessCompute
+  insize=1953 outsize=1958 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(64): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=1958 outsize=193 ok=1
+Cmd: preprocessCompute
+  insize=6572 outsize=6577 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(63): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 4 at SPH2D.compute(98): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(142): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6577 outsize=781 ok=1
+Cmd: preprocessCompute
+  insize=2283 outsize=2288 ok=1
+Cmd: preprocessCompute
+  insize=6394 outsize=6399 ok=1
+Cmd: preprocessCompute
+  insize=2791 outsize=2796 ok=1
+Cmd: preprocessCompute
+  insize=2792 outsize=2797 ok=1
+Cmd: preprocessCompute
+  insize=2882 outsize=2887 ok=1
+Cmd: preprocessCompute
+  insize=6127 outsize=6132 ok=1
+Cmd: preprocessCompute
+  insize=3294 outsize=3299 ok=1
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=6127 outsize=6132 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH2D.compute(63): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 4 at SPH2D.compute(93): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH2D.compute(136): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=6132 outsize=781 ok=1
+Cmd: preprocessCompute
+  insize=3454 outsize=3459 ok=1
+Cmd: preprocessCompute
+  insize=3453 outsize=3458 ok=1
+Cmd: preprocessCompute
+  insize=3754 outsize=3759 ok=1
+Cmd: preprocessCompute
+  insize=3749 outsize=3754 ok=1
+Cmd: preprocessCompute
+  insize=3800 outsize=3805 ok=1
+Cmd: preprocessCompute
+  insize=3856 outsize=3861 ok=1
+Cmd: preprocessCompute
+  insize=5925 outsize=5930 ok=1
+Cmd: preprocessCompute
+  insize=4054 outsize=4059 ok=1
+Cmd: preprocessCompute
+  insize=5529 outsize=5534 ok=1
+Cmd: preprocessCompute
+  insize=5024 outsize=5029 ok=1
+Cmd: preprocessCompute
+  insize=4994 outsize=4999 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(163): undeclared identifier 'acceleration'
+  api=4 insize=4999 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4951 outsize=4956 ok=1
+Cmd: preprocess
+  insize=919 outsize=220 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1137 outsize=766 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1137 outsize=298 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
@@ -15,6 +117,161 @@ Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4958 outsize=4963 ok=1
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4954 outsize=4959 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4959 outsize=1161 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4952 outsize=4957 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(59): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4957 outsize=781 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4952 outsize=4957 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  api=4 insize=4957 outsize=2105 ok=1
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4954 outsize=4959 ok=1
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4989 outsize=4994 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4954 outsize=4959 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at SPH3D.compute(82): signed/unsigned mismatch, unsigned assumed
+  error: 1 plat 4 at SPH3D.compute(117): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 4 at SPH3D.compute(134): undeclared identifier 'force'
+  api=4 insize=4959 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4954 outsize=4959 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4952 outsize=4957 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=4974 outsize=4979 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: preprocess
+  insize=992 outsize=268 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1161 outsize=766 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1161 outsize=354 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: initializeCompiler
+Cmd: preprocess
+  insize=994 outsize=269 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1163 outsize=766 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1163 outsize=354 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
