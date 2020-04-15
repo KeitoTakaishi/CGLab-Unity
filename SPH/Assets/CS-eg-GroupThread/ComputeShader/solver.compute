@@ -1,0 +1,23 @@
+﻿#pragma kernel calc
+
+RWStructuredBuffer<float> buffer;
+groupshared float sharedbuffer[128];
+[numthreads(128,1,1)]
+void calc(
+	uint3 Gid : SV_GroupID,
+	uint3 id : SV_DispatchThreadID,
+	uint GI : SV_GroupIndex)
+{	
+	if (GI < 100) {
+		for(int i = 0; i < 10000; i++){}
+	}
+	sharedbuffer[GI] = buffer[GI + Gid.x * 128];
+	GroupMemoryBarrierWithGroupSync();
+	
+	float sum = 0.0;
+	[loop]
+	for (int j = 0; j < 128; j++) {
+		sum += sharedbuffer[j];
+	}
+	buffer[id.x] = sum;
+}
