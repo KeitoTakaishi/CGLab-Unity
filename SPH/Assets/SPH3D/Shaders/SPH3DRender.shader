@@ -1,4 +1,4 @@
-﻿Shader "Hidden/SPH3DRender"
+﻿Shader "Hidden/DebugRender"
 {
 	Properties
 	{
