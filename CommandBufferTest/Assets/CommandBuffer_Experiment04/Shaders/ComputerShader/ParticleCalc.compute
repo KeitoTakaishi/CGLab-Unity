@@ -1,0 +1,23 @@
+﻿
+#pragma kernel Calc
+
+struct ParticleData {
+	float3 pos;
+};
+RWStructuredBuffer<ParticleData> buffer;
+
+
+
+
+
+float speed;
+[numthreads(128, 1, 1)]
+void Calc(uint3 id : SV_DispatchThreadID)
+{
+	//float z = buffer[id.x].pos.z;
+	//buffer[id.x].pos = float3(((float)id.x / 100.0)*sin(time+id.x), ((float)id.x / 100.0)*cos(time+id.x), z);
+	float3 p = buffer[id.x].pos;
+	if (p.y > 10.0) p.y = -10.0;
+	p.y += speed;
+	buffer[id.x].pos = p;
+};
