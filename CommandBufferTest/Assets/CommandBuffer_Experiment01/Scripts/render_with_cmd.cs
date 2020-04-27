@@ -22,8 +22,7 @@ public class render_with_cmd : MonoBehaviour
         commandb = new CommandBuffer();
         Camera cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         commandb.name = "draw procedual";
-        commandb.DrawProcedural(cam.cameraToWorldMatrix, mat, 0, MeshTopology.Points
-            , particleNum, 1);
+        commandb.DrawProcedural(cam.cameraToWorldMatrix, mat, 0, MeshTopology.Points, particleNum);
         //cam.AddCommandBuffer(CameraEvent.AfterForwardOpaque, commandb);
         cam.AddCommandBuffer(CameraEvent.BeforeForwardAlpha, commandb);
         //cam.AddCommandBuffer(CameraEvent.AfterSkybox, commandb);

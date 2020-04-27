@@ -1,4 +1,4 @@
-﻿Shader "Unlit/render"
+﻿Shader "Unlit/Demo04/render"
 {
 	SubShader{
 		// アルファを使う
@@ -96,6 +96,7 @@
 			{
 				// 出力はテクスチャカラーと頂点色
 				float4 col = tex2D(_MainTex, i.tex) * i.col;
+				
 				col = float4(0.0, 0.8, 0.8, 1.0);
 				//float2 uv = i.tex;
 				// アルファが一定値以下なら中断

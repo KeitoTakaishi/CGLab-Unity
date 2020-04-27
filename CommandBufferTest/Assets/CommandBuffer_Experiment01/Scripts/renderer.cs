@@ -50,7 +50,7 @@ public class renderer : MonoBehaviour
         mat.SetPass(0);
 
         // 1万個のオブジェクトをレンダリング
-        Graphics.DrawProcedural(MeshTopology.Points, particleNum);
+        Graphics.DrawProceduralNow(MeshTopology.Points, particleNum);
     }
 
 

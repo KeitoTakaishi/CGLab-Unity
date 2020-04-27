@@ -243,11 +243,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kernel: {fileID: 7200000, guid: 71f999e63541bff4f99d811f7abd084b, type: 3}
   _depthShader: {fileID: 4800000, guid: 24b722edbed06b643a5cfe886cf1932b, type: 3}
+  _blurShader: {fileID: 4800000, guid: 00f6ad6fc919175428adfa838efefc70, type: 3}
+  _calcNormalShader: {fileID: 4800000, guid: 326f2e2c40f40e94da3142389dcce264, type: 3}
   _renderGBufferShader: {fileID: 4800000, guid: 62f41a4ce41b57a47808513bd27b2731,
     type: 3}
   particleNum: 12800
   speed: 0.05
-  particleSize: 0.22
+  _blurFilterRadius: 16
+  _blurScale: 0.1
+  _blurDepthFallOff: 0.1
+  particleSize: 0.4
+  _diffuse: {r: 0, g: 0.2, b: 1, a: 1}
+  _specular: {r: 0.25, g: 0.25, b: 0.25, a: 0.25}
+  _emission: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0}
+  _roughness: 0.5
 --- !u!4 &1564978875
 Transform:
   m_ObjectHideFlags: 0

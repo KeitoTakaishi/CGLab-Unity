@@ -109,11 +109,11 @@
 
 	//sampler2D _ColorBuffer; // カラー
 	sampler2D _DepthBuffer;
-	//sampler2D _NormalBuffer;// 法線
+	sampler2D _NormalBuffer;// 法線
 
-	//fixed4 _Diffuse;  // 拡散反射光の色
-	//fixed4 _Specular; // 鏡面反射光の色
-	//float4 _Emission; // 放射光の色
+	fixed4 _Diffuse;  // 拡散反射光の色
+	fixed4 _Specular; // 鏡面反射光の色
+	float4 _Emission; // 放射光の色
 
 
 	void frag(v2f i, out gbufferOut o)
@@ -121,8 +121,8 @@
 		//????
 		float2 uv = i.screenPos.xy * 0.5 + 0.5;
 		float  d = tex2D(_DepthBuffer, uv).r;
+		float3 n = tex2D(_NormalBuffer, uv).xyz;
 		
-		/*
 #if UNITY_REVERSED_Z
 		if (Linear01Depth(d) > 1.0 - 1e-3)
 			discard;
@@ -130,12 +130,12 @@
 		if (Linear01Depth(d) < 1e-3)
 			discard;
 #endif
-*/
-		d *= 1.0;
-		o.diffuse = half4(d, d, d, 1.0);
-		o.specular = half4(1.0, 1.0, 1.0, 1.0);
-		o.normal = half4(1.0, 1.0, 1.0, 1.0);
-		o.emission = half4(1.0, 1.0, 1.0, 1.0);
+
+		//d *= 200.0;
+		o.diffuse = _Diffuse;
+		o.specular = _Specular;
+		o.normal = half4(n.x, n.y, n.z, 1.0);
+		o.emission = _Emission;
 		o.depth = d;
 	}
 
@@ -152,14 +152,14 @@
 		{
 			Tags{ "LightMode" = "Deferred" }
 
-			/*
+			
 			Stencil
 			{
 				Comp Always
 				Pass Replace
 				Ref 255
 			}
-			*/
+			
 			CGPROGRAM
 			#pragma target   5.0
 			#pragma vertex   vert

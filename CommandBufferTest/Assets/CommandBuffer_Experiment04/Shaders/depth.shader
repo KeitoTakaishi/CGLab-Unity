@@ -80,9 +80,11 @@
 				for (int i = 0; i < 4; i++)
 				{
 					float3 pos = g_positions[i] * particleSize;
-					pos = pos + vertpos;
+					pos = mul(unity_CameraToWorld, pos) + vertpos;
+					//pos = pos + vertpos;
 					o.position = UnityObjectToClipPos(float4(pos, 1.0));
 					o.uv = g_texcoords[i];
+					//ViewSpace
 					o.vpos = UnityObjectToViewPos(float4(pos, 1.0)).xyz * float3(1, 1, 1);
 					o.size = particleSize;
 					outStream.Append(o);
@@ -110,13 +112,23 @@
 				N.z = sqrt(1.0 - radius_sq);
 
 				// クリップ空間でのピクセルの位置
-				float4 viewPos = float4(i.vpos.xyz + N * 1.0, 1.0);
+				//float4 viewPos = float4(i.vpos.xyz + N * 1.0, 1.0);
+				float4 viewPos = float4(i.vpos.xyz + N , 1.0);
 				float4 clipSpacePos = mul(UNITY_MATRIX_P, viewPos);
 				// 深度
-				float  depth = clipSpacePos.z / clipSpacePos.w; // 正規化
-
+				
+				float n = 0.01;
+				float f = 100.0;
+				//float depth = (clipSpacePos.w - n) / (f - n);
+				//depth = 1.0 - depth;
+				float depth = clipSpacePos.z / clipSpacePos.w; // 正規化
+				
+				
+				//depth = viewPos.z / viewPos.w;
 				fragmentOut o = (fragmentOut)0;
-				o.depthBuffer = 1000.0 *depth;
+				
+				//depth *= 100.0;
+				o.depthBuffer = depth;
 				o.depthStencil = depth;
 
 				return o;
